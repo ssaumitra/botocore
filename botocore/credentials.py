@@ -35,7 +35,6 @@ from botocore.exceptions import CredentialRetrievalError
 from botocore.utils import InstanceMetadataFetcher, parse_key_val_file
 from botocore.utils import ContainerMetadataFetcher
 
-
 logger = logging.getLogger(__name__)
 ReadOnlyCredentials = namedtuple('ReadOnlyCredentials',
                                  ['access_key', 'secret_key', 'token'])

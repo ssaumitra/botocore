@@ -923,4 +923,8 @@ def get_session(env_vars=None):
     """
     Return a new session object.
     """
-    return Session(env_vars)
+    from here_federation import FederatedCredentialsProvider
+    session = Session(env_vars)
+    cred_provider = session.get_component('credential_provider')
+    cred_provider.insert_before('env', FederatedCredentialsProvider(session))
+    return session
